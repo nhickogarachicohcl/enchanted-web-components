@@ -11,6 +11,7 @@
  */
 
 @use "sass:map";
+@use "../../common/palette";
 @use "../../common/themeMap.module";
 @use "../../common/typography";
 
@@ -28,7 +29,7 @@
         transition: opacity 0.2s ease, visibility 0.2s ease, width 0.2s ease, height 0.2s ease;
         z-index: 100;
         box-sizing: border-box;
-        background-color: clr('light', 'background', 'paper');
+        background-color: palette.clr('light', 'background', 'paper');
         box-shadow: 
             0px 4px 16px rgba(0, 0, 0, 0.12),
             0px 8px 24px rgba(0, 0, 0, 0.14);
@@ -41,12 +42,12 @@
     }
 
     &[theme='light']::part(wrapper) {
-        background-color: clr('light', 'background', 'paper');
+        background-color: palette.clr('light', 'background', 'paper');
         color: map.get(themeMap.$enchantedPalette, BLACK87P);
     }
 
     &[theme='light']::part(arrow) {
-        background-color: clr('light', 'background', 'paper');
+        background-color: palette.clr('light', 'background', 'paper');
     }
 
     &[theme='dark']::part(wrapper) {
