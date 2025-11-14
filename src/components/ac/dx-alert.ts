@@ -80,8 +80,6 @@ export class DxAlert extends DxAcBaseElement {
     }
   }
   
-  // eslint-why need to allow any kind of type for data property
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private getAlertIcon(): TemplateResult | typeof nothing {
     switch (this.severity) {
       case ALERT_SEVERITY.ALERT_INFO:
