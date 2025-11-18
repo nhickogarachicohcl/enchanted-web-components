@@ -468,9 +468,11 @@ describe('DxDataGridGeneric - Snapshot testing', () => {
       html`
         <div style="width: 700px; height: 600px;">
           <dx-data-grid-generic
-            .localization=${dxLocalization}
             .columns="${testPickerColDef}"
-            .data="${pickerData}"></dx-data-grid-generic>
+            isLoading=${false}
+            .data="${pickerData}"
+            .localization=${dxLocalization}
+          ></dx-data-grid-generic>
         </div>
       `,
       document.body,
