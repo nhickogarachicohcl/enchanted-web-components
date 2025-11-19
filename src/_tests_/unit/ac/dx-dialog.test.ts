@@ -39,7 +39,7 @@ describe('DxDialog component testing', () => {
     // Wait for any pending setTimeout callbacks to complete (100ms cleanup + 20ms focus delay)
     await browser.pause(150);
 
-    if (document.body.firstElementChild) {
+    while (document.body.firstElementChild) {
       document.body.removeChild(document.body.firstElementChild);
     }
   });
