@@ -16,16 +16,17 @@
 - Fixed focus management in `dx-preview` to focus on dialog element instead of header
 - Fixed `dx-preview` interactive elements to have proper `aria-hidden` and `aria-label` attributes
 - Fixed keyboard accessibility for `dx-dialog` close button
+- Improved accessibility of `dx-breadcrumbs` component for screen readers
 
 ### Changed
 - Changed `dx-preview` backdrop to use `role="presentation"` for better screen reader experience
 - Changed `dx-preview` container to use proper dialog role with ARIA attributes
 - Updated `dx-data-grid-generic` component with improved ARIA attributes:
-  - Changed table `role` from "table" to "grid" for better screen reader support
-  - Changed cell `role` from "cell" to "gridcell" to match grid semantics
-  - Added `aria-colcount`, `aria-rowcount`, and `aria-busy` attributes to table element
-  - Added `role="status"` and `aria-label` to loading container
-  - Wrapped table header and body in `<thead>` and `<tbody>` elements for better semantic structure
+- Changed table `role` from "table" to "grid" for better screen reader support
+- Changed cell `role` from "cell" to "gridcell" to match grid semantics
+- Added `aria-colcount`, `aria-rowcount`, and `aria-busy` attributes to table element
+- Added `role="status"` and `aria-label` to loading container
+- Wrapped table header and body in `<thead>` and `<tbody>` elements for better semantic structure
 
 ### Breaking changes
 
