@@ -16,6 +16,7 @@
 // External imports
 import { customElement, property } from 'lit/decorators.js';
 import { html, nothing, TemplateResult } from 'lit';
+import { isLTR } from '../localization';
 
 // Component imports
 import { DxAcBaseElement } from './dx-ac-base-element';
@@ -118,7 +119,13 @@ export class DxToggleButton extends DxAcBaseElement {
       <div data-testid="dx-toggle-button-div" part=${this.partAttributeDecider(TOGGLE_BUTTON_PARTS.TOGGLE_BUTTON_DIV)}>
       ${this.singleButton === true ? html`
         ${this.showBadge === true
-        ? html`<dx-badge data-testid="dx-badge" part='${TOGGLE_BUTTON_PARTS.TOGGLE_BUTTON_BADGE}'></dx-badge>`
+        ? html`
+          <dx-badge 
+            data-testid="dx-badge" 
+            part='${isLTR()
+              ? TOGGLE_BUTTON_PARTS.TOGGLE_BUTTON_BADGE
+              :`${TOGGLE_BUTTON_PARTS.TOGGLE_BUTTON_BADGE} ${TOGGLE_BUTTON_PARTS.TOGGLE_BUTTON_BADGE_RTL}`}'
+          ></dx-badge>`
         : ''}
         <dx-icon-button
           title=${this.singleButtonTitle}

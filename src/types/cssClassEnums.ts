@@ -94,6 +94,7 @@ export enum TOGGLE_BUTTON_PARTS {
   TOGGLE_ON_SINGLE_BUTTON = 'toggle-on-single-button',
   TOGGLE_OFF_SINGLE_BUTTON = 'toggle-off-single-button',
   TOGGLE_BUTTON_BADGE = 'badge-dot',
+  TOGGLE_BUTTON_BADGE_RTL = 'badge-dot-rtl',
 }
 
 export enum TAG_CLOUD_PARTS {

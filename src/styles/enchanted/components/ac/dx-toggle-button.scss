@@ -49,4 +49,9 @@
     align-items: center;
     justify-content: center;
   }
+
+  &::part(badge-dot-rtl) {
+    right: auto;
+    left: 6px;
+  }
 }
