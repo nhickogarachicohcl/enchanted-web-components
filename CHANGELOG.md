@@ -42,6 +42,7 @@
 - Added `aria-colcount`, `aria-rowcount`, and `aria-busy` attributes to table element
 - Added `role="status"` and `aria-label` to loading container
 - Wrapped table header and body in `<thead>` and `<tbody>` elements for better semantic structure
+- Using debug instead of console as logging framework. `export DEBUG=enchanted-web-components:*` is enabling the specific debug messages
 
 ## 1.1.0
 
