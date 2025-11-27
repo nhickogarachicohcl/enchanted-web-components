@@ -14,6 +14,7 @@
 ### Changed
 - Changed `dx-dialog` accessibility implementation to use Lit reactive state for `role`, `aria-label`, `tabindex`, and content visibility management
 - Updated `dx-dialog` live region to be part of the template instead of dynamically created
+- Set the correct border and outline color on the dx-avatar component
 
 ### Breaking changes
 
@@ -49,7 +50,6 @@
 - Added `role="status"` and `aria-label` to loading container
 - Wrapped table header and body in `<thead>` and `<tbody>` elements for better semantic structure
 - Using debug instead of console as logging framework. `export DEBUG=enchanted-web-components:*` is enabling the specific debug messages
-- Set the correct border and outline color on the dx-avatar component
 
 ## 1.1.0
 
