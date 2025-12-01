@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/web-components-vite';
 import { html } from 'lit';
 import '../components/ac/dx-menu';
 import '../components/ac/dx-menu-item';
+import '../components/ac/dx-button';
+import { DxMenuPlacement, DxMenuSize } from '../types/dx-menu';
 
 // Styling constants to avoid overly long inline style lines and satisfy max-len lint rule
 const containerStyle = [
@@ -9,19 +11,7 @@ const containerStyle = [
   'justify-content: center',
   'align-items: center',
   'min-height: 400px',
-  'padding: 40px',
-  'background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)'
-].join('; ') + ';';
-const buttonStyle = [
-  'padding: 12px 32px',
-  'border-radius: 8px',
-  'border: none',
-  'background: #2196f3',
-  'color: #fff',
-  'font-weight: 500',
-  'cursor: pointer',
-  'box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3)',
-  'font-size: 14px'
+  'padding: 40px'
 ].join('; ') + ';';
 
 /**
@@ -36,8 +26,8 @@ const buttonStyle = [
 export interface DxMenuProps {
   items?: { text: string; value: string }[];
   menuDelay?: number;
-  placement?: 'bottom-start' | 'bottom-end';
-  size?: 'sm' | 'md';
+  placement?: DxMenuPlacement;
+  size?: DxMenuSize;
   dropdownMinWidth?: string;
 }
 
@@ -47,8 +37,8 @@ const meta: Meta<DxMenuProps> = {
   argTypes: {
     items: { control: 'object', description: 'The menu items as an array of objects with text and value.', table: { defaultValue: { summary: '[]' } } },
     menuDelay: { control: 'number', description: 'Delay in ms before opening the menu.', table: { defaultValue: { summary: '300' } } },
-    placement: { control: 'select', options: ['bottom-start', 'bottom-end'], description: 'Menu placement relative to anchor.', table: { defaultValue: { summary: 'bottom-start' } } },
-    size: { control: 'select', options: ['sm', 'md'], description: 'Menu size.', table: { defaultValue: { summary: 'md' } } },
+    placement: { control: 'select', options: Object.values(DxMenuPlacement), description: 'Menu placement relative to anchor.', table: { defaultValue: { summary: DxMenuPlacement.BOTTOM_START } } },
+    size: { control: 'select', options: Object.values(DxMenuSize), description: 'Menu size.', table: { defaultValue: { summary: DxMenuSize.MEDIUM } } },
     dropdownMinWidth: { control: 'text', description: 'CSS var --dropdown-menu-min-width (e.g., 240px).', table: { defaultValue: { summary: '' } } },
   },
   args: {
@@ -58,8 +48,8 @@ const meta: Meta<DxMenuProps> = {
       { text: 'Menu Item 3', value: '3' },
     ],
     menuDelay: 300,
-    placement: 'bottom-start',
-    size: 'md',
+    placement: DxMenuPlacement.BOTTOM_START,
+    size: DxMenuSize.MEDIUM,
     dropdownMinWidth: '240px',
   },
   render: (args) => {
@@ -71,9 +61,7 @@ const meta: Meta<DxMenuProps> = {
           placement=${args.placement}
           size=${args.size}
         >
-          <button slot="target-anchor" style="${buttonStyle}">
-            Open Menu
-          </button>
+          <dx-button slot="target-anchor" variant="contained" size="large" buttontext="Menu"></dx-button>
           ${args.items && args.items.map((item) => { return html`
             <dx-menu-item slot="menu-items" text="${item.text}" value="${item.value}"></dx-menu-item>
           `; })}
@@ -86,22 +74,7 @@ const meta: Meta<DxMenuProps> = {
 export default meta;
 type Story = StoryObj<DxMenuProps>;
 
-export const Default: Story = {
-  render: () => {
-    return html`
-      <div style="${containerStyle}">
-        <dx-menu open size="md" style="--dropdown-menu-min-width: 200px;">
-          <button slot="target-anchor" style="${buttonStyle}">
-            Menu
-          </button>
-          <dx-menu-item slot="menu-items" text="Menu Item 1" value="1"></dx-menu-item>
-          <dx-menu-item slot="menu-items" text="Menu Item 2" value="2"></dx-menu-item>
-          <dx-menu-item slot="menu-items" text="Menu Item 3" value="3"></dx-menu-item>
-        </dx-menu>
-      </div>
-    `;
-  },
-};
+export const Default: Story = {};
 
 export const AllStates: Story = {
   args: {
@@ -112,8 +85,8 @@ export const AllStates: Story = {
       { text: 'Option 4', value: '4' },
     ],
     menuDelay: 300,
-    placement: 'bottom-start',
-    size: 'sm',
+    placement: DxMenuPlacement.BOTTOM_START,
+    size: DxMenuSize.SMALL,
     dropdownMinWidth: '240px',
   },
 };

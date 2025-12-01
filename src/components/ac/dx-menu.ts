@@ -26,6 +26,7 @@ import './dx-list';
 // Helper imports
 import { BUTTON_PARTS, LIST_PARTS, MENU_PARTS } from '../../types/cssClassEnums';
 import { isLTR } from '../localization';
+import { DxMenuPlacement, DxMenuSize } from '../../types/dx-menu';
 
 @customElement('dx-menu')
 @localized()
@@ -37,10 +38,10 @@ export class DxMenu extends DxAcBaseElement {
   menuDelay = 300;
 
   @property({ type: String, reflect: true })
-  placement: 'bottom-start' | 'bottom-end' = 'bottom-start';
+  placement: DxMenuPlacement = DxMenuPlacement.BOTTOM_START;
 
   @property({ type: String, reflect: true })
-  size: 'sm' | 'md' = 'md';
+  size: DxMenuSize = DxMenuSize.MEDIUM;
 
   @state() componentId = uuid();
   @state() openMenu = false;
@@ -73,10 +74,10 @@ export class DxMenu extends DxAcBaseElement {
       menu.style.visibility = 'visible';
 
       switch (this.placement) {
-        case 'bottom-start':
+        case DxMenuPlacement.BOTTOM_START:
           menu.style.left = `${isLTR() ? targetLeft : targetRight - menuWidth}px`;
           break;
-        case 'bottom-end':
+        case DxMenuPlacement.BOTTOM_END:
           menu.style.left = `${targetRight - menuWidth}px`;
           break;
         default:
