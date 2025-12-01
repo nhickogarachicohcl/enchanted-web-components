@@ -3,6 +3,16 @@
 ## Unreleased
 
 ### Added
+
+### Fixed
+
+### Changed
+
+### Breaking changes
+
+## 1.3.0
+
+### Added
 - Added a new storybook component for `dx-popover`.
 - Added new property for disabling popover on hover in `dx-popover`.
 - Prevent dropdown closing when dragging scrollbar inside `<dx-input-select>`.
@@ -12,8 +22,6 @@
 
 ### Changed
 - Changed `dx-dialog` live region styling from a CSS class selector to a `part` attribute with `::part()` selector, ensuring proper accessibility and visual hiding inside shadow DOM. This resolves issues with screen reader announcements and visible text flashes on dialog open.
-
-### Breaking changes
 
 ## 1.2.1
 
