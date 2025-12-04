@@ -201,7 +201,7 @@ export const AllStates: Story = {
       .popover-section {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 100px;
       }
       .popover-section h3 {
         margin: 0 0 10px 0;
@@ -211,13 +211,11 @@ export const AllStates: Story = {
       .popover-row {
         display: flex;
         flex-wrap: wrap;
-        gap: 100px;
+        gap: 150px;
         align-items: center;
       }
       .popover-item {
         position: relative;
-        min-width: 150px;
-        min-height: 100px;
         display: flex;
         align-items: center;
         justify-content: center;
