@@ -8,7 +8,7 @@ This is the Enchanted Web Components library - a UI library providing Lit-based 
 **License**: Apache-2.0
 **Node Version**: >=20.X
 
-> **Note**: Version numbers in this document should be verified against `package.json` to ensure accuracy. The versions listed reflect the state at the time of writing.
+> **Note on Version Numbers**: The versions listed in this document (package version, Lit, TypeScript, etc.) are maintained manually and may become outdated. **Always verify current versions in `package.json`** before making assumptions. When updating major dependencies, please also update the version numbers in this file to keep the documentation accurate.
 
 ## Key Technologies
 - **Framework**: Lit (Web Components) v3.3.0
@@ -37,10 +37,10 @@ This is the Enchanted Web Components library - a UI library providing Lit-based 
 - Import types from `src/types/` directory when available
 
 ### File Headers
-All source files must include the Apache License 2.0 header:
+All source files must include the Apache License 2.0 header with the current year:
 ```typescript
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright YYYY HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -54,6 +54,8 @@ All source files must include the Apache License 2.0 header:
  * limitations under the License.                                           *
  * ======================================================================== */
 ```
+
+**Important**: Replace `YYYY` with the current year when creating new files. GitHub Copilot will automatically use the current year when suggesting this header.
 
 ### Import Organization
 Organize imports in this order:
@@ -227,7 +229,7 @@ buttontext: string | undefined;
 render() {
   return html`
     <button
-      ?disabled="${this.disabled}"
+      ?disabled=${this.disabled}
       @click=${this.handleClick}
     >
       ${this.buttontext}
