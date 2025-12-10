@@ -8,6 +8,7 @@
 - Added `clearIcon` and `actionIcon` properties to `dx-input-textfield` component to support enchanted-icons (TemplateResult) for icon rendering.
 - Add `dx-data-grid-generic` storybook story
 - Add `icon` property to the `dx-chip` component
+- Added a new storybook for the theme inspector and also added some new color tokens.
 
 ### Fixed
 - Fix the `XS` size of the `dx-dialog` component
