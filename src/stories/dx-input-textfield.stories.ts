@@ -75,12 +75,12 @@ const meta: Meta<DxInputTextfieldProps> = {
     clearIcon: {
       control: { type: 'object' },
       description: 'The TemplateResult for the clear icon.',
-      table: { defaultValue: { summary: 'TemplateResult' } } },
+      table: { defaultValue: { summary: 'TemplateResult' } } 
     },
     actionIcon: {
       control: { type: 'object' },
       description: 'The TemplateResult for the action icon.',
-      table: { defaultValue: { summary: 'TemplateResult' } } },
+      table: { defaultValue: { summary: 'TemplateResult' } } 
     },
     field: {
       control: { type: 'text' },
@@ -116,21 +116,24 @@ const meta: Meta<DxInputTextfieldProps> = {
     autocomplete: 'on',
     ariaLabel: '',
   },
-  render: (args) => {return html`
-    <dx-input-textfield
-      .value=${args.value}
-      type="${args.type}"
-      label="${args.label}"
-      placeholder="${args.placeholder}"
-      ?disabled=${args.disabled}
-      .clearIcon=${args.clearIconUrl}
-      .actionIcon=${args.actionIconUrl}
-      field="${args.field}"
-      ?hassearchedbefore=${args.hassearchedbefore}
-      autocomplete="${args.autocomplete}"
-      aria-label="${args.ariaLabel}"
-    ></dx-input-textfield>
-  `;},
+  
+  render: (args) => {
+    return html`
+      <dx-input-textfield
+        .value=${args.value}
+        type="${args.type}"
+        label="${args.label}"
+        placeholder="${args.placeholder}"
+        ?disabled=${args.disabled}
+        .clearIcon=${args.clearIcon}
+        .actionIcon=${args.actionIcon}
+        field="${args.field}"
+        ?hassearchedbefore=${args.hassearchedbefore}
+        autocomplete="${args.autocomplete}"
+        aria-label="${args.ariaLabel}"
+      ></dx-input-textfield>
+    `;
+  },
 };
 
 export default meta;
@@ -254,7 +257,7 @@ export const AllStates: Story = {
             label="Search"
             placeholder="Type to search"
             aria-label="Search products in catalog"
-            .actionIconUrl=${html`<icon-search size="16" color="black"></icon-search>`}
+            .actionIcon=${html`<icon-search size="16" color="black"></icon-search>`}
           ></dx-input-textfield>
         </div>
         <div style="width: 250px;">
